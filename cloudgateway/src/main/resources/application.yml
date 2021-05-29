@@ -1,0 +1,32 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: COMPANY-SERVICE
+          uri: lb://COMPANY-SERVICE
+          predicates:
+            - Path=/company/**
+        - id: STOCK-SERVICE
+          uri: lb://STOCK-SERVICE
+          predicates:
+            - Path=/stock/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+    instance:
+      hostname: localhost

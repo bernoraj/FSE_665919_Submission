@@ -1,0 +1,66 @@
+.logo{
+    height: 50px;
+    width: 50px;
+}
+
+table {
+    width: 100%;
+  }
+  
+  .mat-row.hovered {
+    background: #eee;
+}
+
+.mat-row.highlighted {
+  background: #999;
+}
+
+// .mat-row {
+//     min-height: 65px;
+    
+//     &.hovered{
+//         background: #eee;
+//     }
+//     &.selected {
+//         background: #dddddd;
+//     }
+//  }
+
+
+.mat-stepper-vertical {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.btnGroupies{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+   padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 50em;
+  
+}
+
+  // .mat-form-field {
+  //   font-size: 14px;
+  //   width: 100%;
+  // }
+
+  .stockTable,.companyTable,.btn-toolbar{
+      padding: 1em;
+  }
+
+  .datePicker{
+    padding: 1em;
+    width: 25%;
+  }
+  
+  .stockStats{
+    padding: 1em;
+   // border: 1px solid black;
+    width: 50%;
+  }

@@ -1,0 +1,51 @@
+<div class="companyContainer">
+
+
+<h2 mat-dialog-title>Add Company</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="companyform" [formGroup]="addCompanyForm">
+         <mat-form-field class="example-full-width">
+            <mat-label>Company Code</mat-label>
+            <input matInput placeholder="Ex. 97176" required formControlName="code">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Company Name</mat-label>
+            <input matInput placeholder="Ex. Apple" required formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>CEO Name</mat-label>
+            <input matInput placeholder="Ex. Tim Cook" required formControlName="CEOname">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Website</mat-label>
+            <input type="url" matInput placeholder="Ex. www.apple.com" required formControlName="website"> 
+          </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Turnover</mat-label>
+        <input matInput class="example-right-align" placeholder="120000000" required formControlName="turnover">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Stock Exchange</mat-label>
+        <select matNativeControl required formControlName="stockex">
+            <option value="">Select</option>
+            <option value="BSE">BSE</option>
+            <option value="NSE">NSE</option>
+          </select>
+      </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button class="btn btn-danger" mat-button mat-dialog-close>Cancel</button>
+
+    <button type="button" (click)="onSubmit()" mat-dialog-close class="btn btn-success cformtbn" mat-button [disabled]="addCompanyForm.invalid" cdkFocusInitial>Save</button>
+</mat-dialog-actions>
+
+</div>
+
